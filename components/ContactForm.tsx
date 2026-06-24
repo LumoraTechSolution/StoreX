@@ -221,7 +221,7 @@ export function ContactForm() {
           ) : (
             <>
               <Send className="h-4 w-4" aria-hidden />
-              Book a Demo
+              Send message
             </>
           )}
         </button>

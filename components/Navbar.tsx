@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, CalendarCheck } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { navLinks } from "@/content/site";
+import { navLinks, whatsappUrl } from "@/content/site";
 
 /**
  * Sticky navbar. Gains a blurred background + shadow once the page is scrolled,
@@ -54,10 +54,15 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary">
-            <CalendarCheck className="h-4 w-4" aria-hidden />
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden />
             Book a Demo
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -91,14 +96,16 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="btn-primary mt-2 w-full"
           >
-            <CalendarCheck className="h-4 w-4" aria-hidden />
+            <MessageCircle className="h-4 w-4" aria-hidden />
             Book a Demo
-          </Link>
+          </a>
         </div>
       </div>
     </header>

@@ -14,7 +14,20 @@ export const site = {
     "StoreX is a cloud + desktop point-of-sale platform with multi-branch management, finance dashboards, loyalty, VAT handling, thermal receipts and secure multi-tenant data — for retail and hospitality teams.",
   email: "lumoratech.office@gmail.com",
   phone: "+94 77 319 0068",
+  // Same number as `phone`, in international format with digits only (no +,
+  // spaces or dashes) — required by the wa.me click-to-chat API.
+  whatsapp: "94773190068",
 } as const;
+
+/**
+ * Builds a WhatsApp click-to-chat URL to the site's number, with an optional
+ * prefilled message. Used by the "Book a Demo" CTAs.
+ */
+export function whatsappUrl(
+  message = "Hi StoreX team, I'd like to book a demo of StoreX."
+): string {
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+}
 
 /** Primary navigation — anchor links scroll within the landing page. */
 export const navLinks: { label: string; href: string }[] = [

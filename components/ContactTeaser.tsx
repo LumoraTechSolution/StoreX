@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, CalendarCheck } from "lucide-react";
-import { site } from "@/content/site";
+import { ArrowRight, Mail, Phone, MessageCircle } from "lucide-react";
+import { site, whatsappUrl } from "@/content/site";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 /** Anchored CTA teaser on the home page that points to the /contact page. */
@@ -38,11 +38,16 @@ export function ContactTeaser() {
               </p>
 
               <div data-reveal className="mt-7 flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary">
-                  <CalendarCheck className="h-4 w-4" aria-hidden />
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden />
                   Book a Demo
                   <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
+                </a>
                 <Link href="/contact" className="btn-ghost-light">
                   Contact Sales
                 </Link>
