@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07153d"/>
+      <stop offset="1" stop-color="#10406b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(150,170) scale(2.6)">
+    <circle cx="50" cy="46" r="30" stroke="#13a4f4" stroke-width="4.5" fill="none"/>
+    <g stroke="#13a4f4" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M30 35h6l4 26h27"/>
+      <path d="M41 41h34l-4 15H44"/>
+    </g>
+    <circle cx="47" cy="66" r="2.6" fill="#13a4f4"/>
+    <circle cx="62" cy="66" r="2.6" fill="#13a4f4"/>
+  </g>
+  <text x="470" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="96" font-weight="800" fill="#ffffff">Store<tspan fill="#13a4f4">X</tspan></text>
+  <text x="474" y="360" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="500" fill="#a2dafb">The POS built for modern retail &amp; hospitality</text>
+  <text x="474" y="412" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#66c4f8">Cloud + Desktop · Multi-branch · Loyalty · VAT · Thermal receipts</text>
+  <text x="150" y="560" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,0.5)">Powered by Lumora Technologies</text>
+</svg>

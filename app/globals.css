@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #13a4f4;
+  --primary-strong: #0a6aa3;
+  --navy: #0a1b4d;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored sections so the sticky navbar doesn't cover headings. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-white text-navy antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, brand-colored focus ring for keyboard users everywhere. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-navy;
+  }
+}
+
+@layer components {
+  /* Page section container with consistent horizontal padding + max width. */
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
+           transition-all duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white shadow-soft hover:bg-primary-700 hover:shadow-glow active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn border border-primary-200 bg-white text-primary-700 hover:border-primary-300 hover:bg-primary-50 active:scale-[0.98];
+  }
+
+  .btn-ghost-light {
+    @apply btn border border-white/30 bg-white/10 text-white hover:bg-white/20 active:scale-[0.98];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-100 bg-primary-50 px-3 py-1
+           text-xs font-semibold uppercase tracking-wider text-primary-700;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Subtle dotted grid used as a background texture. */
+  .bg-dotgrid {
+    background-image: radial-gradient(rgba(10, 27, 77, 0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+/* Hard stop for all motion when the user prefers reduced motion. GSAP also
+   short-circuits in JS, but this covers CSS animations/transitions too. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
