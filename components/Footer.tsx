@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Linkedin, Facebook, Mail, Phone } from "lucide-react";
+import { Linkedin, Facebook, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
-import { site, footerLinks, socials } from "@/content/site";
+import { site, footerLinks, socials, whatsappUrl } from "@/content/site";
 
 const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   Facebook,
@@ -21,16 +21,12 @@ export function Footer() {
             </p>
             <div className="mt-5 space-y-2 text-sm">
               <a
-                href={`mailto:${site.email}`}
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white/70 transition-colors hover:text-white"
               >
-                <Mail className="h-4 w-4" aria-hidden /> {site.email}
-              </a>
-              <a
-                href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                className="flex items-center gap-2 text-white/70 transition-colors hover:text-white"
-              >
-                <Phone className="h-4 w-4" aria-hidden /> {site.phone}
+                <MessageCircle className="h-4 w-4" aria-hidden /> {site.phone}
               </a>
             </div>
           </div>

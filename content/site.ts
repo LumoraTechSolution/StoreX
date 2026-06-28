@@ -12,7 +12,6 @@ export const site = {
   tagline: "The point-of-sale built for modern retail & hospitality.",
   description:
     "StoreX is a cloud + desktop point-of-sale platform with multi-branch management, finance dashboards, loyalty, VAT handling, thermal receipts and secure multi-tenant data — for retail and hospitality teams.",
-  email: "lumoratech.office@gmail.com",
   phone: "+94 77 319 0068",
   // Same number as `phone`, in international format with digits only (no +,
   // spaces or dashes) — required by the wa.me click-to-chat API.

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Mail, Phone, Clock, MapPin } from "lucide-react";
+import { ArrowLeft, MessageCircle, Clock, MapPin } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
-import { site } from "@/content/site";
+import { site, whatsappUrl } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact & Book a Demo",
@@ -40,16 +40,10 @@ export default function ContactPage() {
 
               <ul className="mt-10 space-y-5">
                 <ContactDetail
-                  icon={<Mail className="h-5 w-5" />}
-                  label="Email"
-                  value={site.email}
-                  href={`mailto:${site.email}`}
-                />
-                <ContactDetail
-                  icon={<Phone className="h-5 w-5" />}
-                  label="Phone"
+                  icon={<MessageCircle className="h-5 w-5" />}
+                  label="WhatsApp"
                   value={site.phone}
-                  href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                  href={whatsappUrl()}
                 />
                 <ContactDetail
                   icon={<Clock className="h-5 w-5" />}

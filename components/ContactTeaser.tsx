@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { site, whatsappUrl } from "@/content/site";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -63,22 +63,13 @@ export function ContactTeaser() {
               <ul className="mt-4 space-y-4 text-sm">
                 <li>
                   <a
-                    href={`mailto:${site.email}`}
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
                   >
                     <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary-500/20 text-primary-200">
-                      <Mail className="h-4 w-4" aria-hidden />
-                    </span>
-                    {site.email}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
-                  >
-                    <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary-500/20 text-primary-200">
-                      <Phone className="h-4 w-4" aria-hidden />
+                      <MessageCircle className="h-4 w-4" aria-hidden />
                     </span>
                     {site.phone}
                   </a>
