@@ -16,7 +16,6 @@ type Status = "idle" | "submitting" | "success" | "error";
 const EMPTY: ContactInput = {
   name: "",
   business: "",
-  email: "",
   phone: "",
   message: "",
   company_website: "",
@@ -152,15 +151,6 @@ export function ContactForm() {
           onChange={(v) => update("business", v)}
           error={errors.business}
           autoComplete="organization"
-        />
-        <Field
-          name="email"
-          type="email"
-          label="Email"
-          value={values.email}
-          onChange={(v) => update("email", v)}
-          error={errors.email}
-          autoComplete="email"
         />
         <Field
           name="phone"

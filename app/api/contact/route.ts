@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, business, email, phone, message, company_website } = parsed.data;
+  const { name, business, phone, message, company_website } = parsed.data;
 
   // 3. Honeypot: silently accept (200) so bots don't learn they were caught,
   //    but don't send the email.
@@ -68,7 +68,6 @@ export async function POST(request: Request) {
   const text = [
     `Name:     ${name}`,
     `Business: ${business}`,
-    `Email:    ${email}`,
     `Phone:    ${phone}`,
     "",
     "Message:",
@@ -81,7 +80,6 @@ export async function POST(request: Request) {
       <table style="width:100%;border-collapse:collapse;font-size:14px">
         <tr><td style="padding:6px 0;color:#64748b">Name</td><td style="padding:6px 0;font-weight:600">${escapeHtml(name)}</td></tr>
         <tr><td style="padding:6px 0;color:#64748b">Business</td><td style="padding:6px 0;font-weight:600">${escapeHtml(business)}</td></tr>
-        <tr><td style="padding:6px 0;color:#64748b">Email</td><td style="padding:6px 0;font-weight:600">${escapeHtml(email)}</td></tr>
         <tr><td style="padding:6px 0;color:#64748b">Phone</td><td style="padding:6px 0;font-weight:600">${escapeHtml(phone)}</td></tr>
       </table>
       <p style="margin:16px 0 6px;color:#64748b;font-size:14px">Message</p>
@@ -94,7 +92,6 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: CONTACT_FROM_EMAIL || SMTP_USER,
       to: CONTACT_TO_EMAIL,
-      replyTo: `${name} <${email}>`,
       subject,
       text,
       html,
